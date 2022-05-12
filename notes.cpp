@@ -164,7 +164,7 @@ void entry_view(std::vector<Entry*>& notepad, unsigned entry_spot)
         notepad.erase(notepad.begin() + entry_spot - 1);
         return;
       default:
-        std::cout << "\n";
+        std::cout << "Invalid input. Please enter 1-3\n";
     }
   } while (selection != 0);
   return;

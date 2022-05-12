@@ -78,7 +78,7 @@ int main()
         // user views changelog;
         changelog_reader();
       default:
-        std::cout << "\n";
+        std::cout << "Invalid selection, Please input 1-5\n";
     }
   } while (selection != 0);
 
