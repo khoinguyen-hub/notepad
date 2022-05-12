@@ -22,6 +22,14 @@ Last modified by: Ares Hamilton
 #include <string>
 #include <vector>
 
+void test (int expected, int actual){
+  if (expected == actual) {
+    std::cout << "Passed\n";
+  }
+  else {
+    std::cout << "Failed\n";
+  }
+}
 
 int main()
 {
@@ -51,9 +59,11 @@ int main()
     switch (selection)
     {
       case 0:
+        test(0, selection);
         break;
       case 1:
         // user adds an entry
+        test(1, selection);
         written_entry = new_entry();
         notepad.push_back(written_entry);
         changelog_writer("Entry addition",
@@ -61,10 +71,12 @@ int main()
         break;
       case 2:
         // user views notepad
+        test(2, selection);
         notepad_view(notepad);
         break;
       case 3:
         // user saves notepad to file
+        test(3, selection);
         std::cout << "\nName of file: ";
         std::cin >> file;
         changelog_writer("Notepad save", "File named " + file + " saved");
@@ -72,10 +84,12 @@ int main()
         break;
       case 4:
         // user imports notepad from file
+        test(4, selection);
         import_notepad(notepad);
         break;
       case 5:
         // user views changelog;
+        test(5, selection);
         changelog_reader();
       default:
         std::cout << "Invalid selection, Please input 1-5\n";
